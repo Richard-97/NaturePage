@@ -1,0 +1,79 @@
+.btn{
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px; /*hore+dole a lavo+praco*/
+        display: inline-block;
+        font-size: $default-font-size;
+        border-radius: 100px;
+        transition: all 0.2s; /*vsetky animacie sa zapnu*/
+        position: relative;
+        //background-color: $color-white;
+    }
+    &-white{
+        background-color: $color-white;
+        color: $color-gray-dark;
+    }
+    &-green{
+        background-color: $color-primary;
+        color: $color-white;
+    }
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba($color-black,0.2);
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6); /*dvojnasobne zvacsenie*/
+            opacity: 0;
+        }
+    }
+    &:active{
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba($color-black,0.2)
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &-white::after{
+        background-color: $color-white;
+    }
+    &-animated{
+        animation: moveFromDown 1s ease-out .75s; 
+        animation-fill-mode: backwards; /*to ste ako 0%{}*/
+    }
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        color: $color-primary;
+        font-size: $default-font-size;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }  
+
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+
+    }
+}
+

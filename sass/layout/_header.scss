@@ -1,0 +1,14 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+         rgba($color-primary-light, 0.8),
+         rgba($color-primary-dark, 0.8)),
+        url('../img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative; /*header je rodicom logo-box a top left vychadza odtial*/
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
